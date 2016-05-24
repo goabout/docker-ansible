@@ -2,7 +2,8 @@ FROM ubuntu:14.04
 
 MAINTAINER Go About <tech@goabout.com>
 
-RUN apt-get install -yq software-properties-common && \
+RUN apt-get update -q && \
+    apt-get install -yq software-properties-common && \
     apt-add-repository -y ppa:ansible/ansible && \
     apt-get update -q && \
     apt-get install -yq ansible && \
